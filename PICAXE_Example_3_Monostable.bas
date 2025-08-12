@@ -12,7 +12,7 @@ main:
     btfsc PORTA,0
     goto main
     bsf PORTB,1
-    call wait1000ms
+    call wait1000ms REM;this is a built-in subroutine
     bcf PORTB,1
     goto main
 END

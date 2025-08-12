@@ -8,6 +8,9 @@ init:
 	movwf TRISB
 	bcf STATUS,RP0
 	
+	REM bsf INTCON,INT0IE
+	REM bsf INTCON,GIE
+	
 main:
     btfsc PORTA,0
     goto main
@@ -15,4 +18,9 @@ main:
     call wait1000ms REM;this is a built-in subroutine
     bcf PORTB,1
     goto main
+
+interrupt: REM PICAXE interrupt pin is A7
+	nop
+	retfie
+
 END

@@ -1,3 +1,5 @@
+COUNT EQU b0
+
 init:
 	clrf PORTA
 	clrf PORTB
@@ -22,5 +24,6 @@ main:
 interrupt: REM PICAXE interrupt pin is A7
 	nop
 	retfie
+
 
 END
